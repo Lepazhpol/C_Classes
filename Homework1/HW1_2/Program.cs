@@ -13,11 +13,17 @@ if((imputLineA+imputLineB) != null)
    {
     Console.Write("max = ");
     Console.WriteLine(inputNumberA);
+
+    Console.Write("min = ");
+    Console.WriteLine(inputNumberB);
    }
    else
    {
     Console.Write("max = ");
     Console.WriteLine(inputNumberB);
+
+    Console.Write("min = ");
+    Console.WriteLine(inputNumberA);
    }
 
 }
