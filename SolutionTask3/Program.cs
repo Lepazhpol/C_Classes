@@ -1,11 +1,13 @@
-﻿Console.WriteLine("Введите число");
+﻿// Принимает одно число, а на выходе показывает все целы числа от -n до n
+
+Console.WriteLine("Введите число");
 string? imputLkneOne = Console.ReadLine();
 Console.WriteLine("Спасибо");
 
 if(imputLkneOne != null)
 {
     int imputNumber = int.Parse(imputLkneOne);
-    // int startNumber = (imputNumber * -1);
+    int startNumber = 1;
     // string lineOutput = "";
     
     // while (startNumber < imputNumber);
@@ -20,7 +22,7 @@ if(imputLkneOne != null)
 
     string lineOutput = "0";
     
-    while (startNumber <= imputNumber);
+    while (startNumber <= imputNumber)
     {
         lineOutput = startNumber*(-1)+", "+lineOutput+", "+startNumber;
         startNumber++;
