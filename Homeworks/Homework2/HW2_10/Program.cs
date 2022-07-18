@@ -1,5 +1,7 @@
 ﻿// принимает на вход трехзначное число и на выходе показывает вторую цифру этого числа
 
+Console.Clear();
+
 Console.WriteLine("Вы хотите самостоятельно ввести число? y/n: ");
 string answer = Console.ReadLine();
 if (answer != null)
@@ -8,7 +10,10 @@ if (answer != null)
     {
         Console.WriteLine("Введите трехзначное число: ");
         string stringNum = Console.ReadLine();
+        if (stringNum != null)
+        {
         Console.WriteLine(stringNum[1]);
+        }
     }
     else
     {
