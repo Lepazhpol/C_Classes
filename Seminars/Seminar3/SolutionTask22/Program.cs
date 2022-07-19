@@ -9,7 +9,7 @@ if (imputLineN != null)
     string lineNN = string.Empty;
     int s = 1;
 
-    while (s < numberN)
+    while (s <= numberN)
     {
         lineN = lineN + s + " ";
         lineNN = lineNN + (s * s).ToString() + " ";
