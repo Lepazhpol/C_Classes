@@ -46,11 +46,6 @@ calculateLengthAB();
 Console.WriteLine(lengthAB);
 
 
-
-
-
-
-
 // ////////////////Вариант со * но не работает со всеми случаями(((
 // //преобразует введенное пользователем в массив с числами
 // int[,,] parsingCoord(string coordPLine)
