@@ -27,6 +27,6 @@ if (numberLine != null)
 
     calculation();
 
-    if ((d1 == d5) || (d2 == d4)) Console.WriteLine("Да, палиндром");
+    if ((d1 == d5) && (d2 == d4)) Console.WriteLine("Да, палиндром");
     else Console.WriteLine("Нет, не палиндром");
 }
