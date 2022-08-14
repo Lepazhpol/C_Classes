@@ -1,4 +1,5 @@
 ﻿// выводит массив по заданным пользователем параметрам 
+Console.Clear();
 System.Random numberSintezator = new Random();
 
 //запрашиваем и принимаем параметры массива
