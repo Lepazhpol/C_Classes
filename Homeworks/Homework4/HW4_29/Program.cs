@@ -1,7 +1,7 @@
 ﻿// выводит массив по заданным пользователем параметрам 
 System.Random numberSintezator = new Random();
 
-//запрашиваем и принимаем параметры массива, показывая их пользователю
+//запрашиваем и принимаем параметры массива
 Console.WriteLine("Введите длину массива: ");
 string imputLengthLine = Console.ReadLine() ?? "";
 int imputLength = int.Parse(imputLengthLine);
