@@ -26,7 +26,7 @@ void PrintArray(int[] inputArray)
     Console.WriteLine(inputArray[i]);
 }
 
-//Метод ищущий элемент в массиве (ЛОГИЧЕСКИЙ)
+//Метод решающий задачу
 int[] CalculateTask(int[] inputArray)
 {
     int[] resultArray = new int[inputArray.Length/2+1];

@@ -1,13 +1,10 @@
-﻿//Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях
-//* находит пары в массиве и выводит их
+﻿//Задайте массив чисел, найдите разницу между максимальным и миинимальным значением массива
 
 Console.Clear();
+
 int[] bufferArray = FillingArray();
 PrintArray(bufferArray);
-Console.WriteLine("Сцмма эелементов стоящих на четной позиции: " + CalculateTask(bufferArray));
-PairPrint(bufferArray);
-
-
+Console.WriteLine("Разница между наибольшим и наименьшим элементами массива: " + CalculateTask(bufferArray));
 
 
 //Метод возвращает массив заполненный случайными числами
@@ -42,26 +39,12 @@ void PrintArray(int[] inputArray)
 //Метод производящий решение
 int CalculateTask(int[] inputArray)
 {
-    int sum = 0;
+    int max = 0;
+    int min = int.MaxValue; //кладет в переменную максимально возможное значение
     for (int i = 0; i < inputArray.Length; i++)
     {
-        if ((i % 2) == 0)
-        {
-            sum = sum + inputArray[i];
-        }
+        if (inputArray[i] > max) max = inputArray[i];
+        if (inputArray[i] < min) min = inputArray[i];
     }
-    return sum;
-}
-
-//Метод печатающий пары чиел ы массиве
-int[] PairPrint(int[] inputArray)
-{
-    //int[] resultArray = new int[inputArray.Length/2+1];
-    int i = 0;
-    while (i<inputArray.Length/2)
-    {
-        Console.WriteLine(inputArray[i] + " " +inputArray[inputArray.Length-1-i]);
-        i++;
-    }
-    return inputArray;
+    return (max - min);
 }

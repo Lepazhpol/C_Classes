@@ -1,9 +1,14 @@
 ﻿//Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+//*сортировка пузырьком
 
 Console.Clear();
 int[] bufferArray = FillingArray();
 PrintArray(bufferArray);
 Console.WriteLine("Количество четных элементов в массиве: " + CalculateTask(bufferArray));
+Console.WriteLine("Отсортированный массив методом пузырька:");
+int[] buffArr = BubleSort(bufferArray);
+PrintArray(buffArr);
+//Console.WriteLine(PrintArray(BubleSort(bufferArray)));
 
 
 
@@ -45,4 +50,23 @@ int CalculateTask(int[] inputArray)
         if ((inputArray[i] % 2) == 0) amount++;
     }
     return amount;
+}
+
+//Производит сортировку методом пузырька. Сейчас сделано в порядке возрастания. Чтобы было в порядке убывания(см внутрь)
+int[] BubleSort(int[] inputArray)
+{
+    int buble = 0;
+    for (int j = 0; j < inputArray.Length; j++)
+    {
+        for (int i = 0; i < inputArray.Length-1; i++)
+        {
+            if (inputArray[i] > inputArray[i+1])    //чтобы было в порядке убывания меняем больше на меньше
+            {
+                buble = inputArray[i];
+                inputArray[i] = inputArray[i+1];
+                inputArray[i+1] = buble;
+            }
+        }
+    }
+    return inputArray;
 }
