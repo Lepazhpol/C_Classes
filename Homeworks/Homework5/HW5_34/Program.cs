@@ -6,10 +6,9 @@ int[] bufferArray = FillingArray();
 PrintArray(bufferArray);
 Console.WriteLine("Количество четных элементов в массиве: " + CalculateTask(bufferArray));
 Console.WriteLine("Отсортированный массив методом пузырька:");
-int[] buffArr = BubleSort(bufferArray);
-PrintArray(buffArr);
-//Console.WriteLine(PrintArray(BubleSort(bufferArray)));
 
+PrintArray(BubleSort(bufferArray));
+//к сожалению нет возможности править комментарий к отправленному ДЗ, я за ночь понял что не так. Простите))
 
 
 //Метод возвращает массив заполненный случайными числами
