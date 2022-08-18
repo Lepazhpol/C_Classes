@@ -20,7 +20,7 @@ void ReadSides()
 
 bool TestTriangle(int sideA, int sideB, int sideC)
 {
-    bool answer = ((sideA + sideB > sideC) && (sideB + sideC > sideB) && (sideA + sideC > sideB)) ? true : false;
+    bool answer = ((sideA + sideB > sideC) && (sideB + sideC > sideA) && (sideA + sideC > sideB)) ? true : false;
     // переменная = (условие) ? значение 1 : значение 2;
     return answer;
 }
