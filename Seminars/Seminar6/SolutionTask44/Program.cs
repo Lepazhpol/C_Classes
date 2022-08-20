@@ -13,7 +13,7 @@ string Fibonacci(int n)
 {
     string answer = "";
     if (n == 2) answer = "0 1";
-    else if (n == 1) answer = 0;
+    else if (n == 1) answer = "0";
     else
     {
         answer = "0 1";
@@ -25,8 +25,13 @@ string Fibonacci(int n)
             fn = fn_1 + fn_2;
             answer += " " + fn;
             fn_2 = fn_1;
-            fn_1 = current;
+            fn_1 = fn;
         }
     }
+    return answer;
+}
 
+void PrintAnswer(string answer)
+{
+    Console.WriteLine("Ряд того что я терпеть не мог в матане: " + answer);
 }
