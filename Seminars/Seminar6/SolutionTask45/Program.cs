@@ -1,9 +1,9 @@
 ﻿// Создает копию заданного одномерного массива с помощью поэлементного копирования
 
-int[] testArray = FillingArray();
-PrintArray(testArray);
+// int[] testArray = FillingArray();
+// PrintArray(testArray);
 
-int[] outArray = Copy
+// // int[] outArray = Copy
 
 
 //метод копирующий массив любого типа
