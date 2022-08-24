@@ -1,11 +1,11 @@
 ﻿//// Задайте двумерный массив размером mxn, заполненный случайными вещественными числами. вывести цветными символами
 
 // Массив с цветами символов
-ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black, ConsoleColor.Blue, ConsoleColor.Cyan,
-                                        ConsoleColor.DarkBlue, ConsoleColor.DarkCyan, ConsoleColor.DarkGray,
-                                        ConsoleColor.DarkGreen, ConsoleColor.DarkMagenta, ConsoleColor.DarkRed,
-                                        ConsoleColor.DarkYellow, ConsoleColor.Gray, ConsoleColor.Green,
-                                        ConsoleColor.Magenta, ConsoleColor.Red, ConsoleColor.White, ConsoleColor.Yellow};
+ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Red,ConsoleColor.Blue,ConsoleColor.DarkGreen, ConsoleColor.Yellow,
+                                        ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
+                                        ConsoleColor.DarkMagenta,ConsoleColor.DarkRed, ConsoleColor.DarkYellow,
+                                        ConsoleColor.Gray,ConsoleColor.Cyan,ConsoleColor.Green,
+                                        ConsoleColor.Magenta,ConsoleColor.Black,ConsoleColor.White};
 
 
 Console.Clear();

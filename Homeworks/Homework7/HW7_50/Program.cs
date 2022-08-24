@@ -4,6 +4,7 @@
 
 Console.Clear();
 
+// потому что не хотим плодить кучу методов...
 Console.WriteLine("Зададим размер массива. Введите число строк: ");
 int countRow = int.Parse(Console.ReadLine() ?? "");
 Console.WriteLine("Введите число столбцов: ");
@@ -12,7 +13,6 @@ Console.WriteLine("Введите строку искомого элемента
 int LookingForRow = int.Parse(Console.ReadLine() ?? "");
 Console.WriteLine("Введите столбец искомого элемента: ");
 int LookingForCalumn = int.Parse(Console.ReadLine() ?? "");
-
 
 long[,] fibArray = FillingTwoDimArray(countRow, countCalumn);
 PrintTwoDimArray(fibArray);
@@ -71,7 +71,7 @@ void PrintTwoDimArray(long[,] inputArray)
         j = 0;
         while (j < inputArray.GetLength(1))
         {
-            Console.Write(inputArray[i, j] + " || ");
+            Console.Write(inputArray[i, j] +  "\t");
             j++;
         }
         Console.WriteLine();
@@ -115,11 +115,11 @@ void PrintColorArray(long[,] inputArray)
             if (i == (LookingForRow-1) && j == (LookingForCalumn-1))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write(inputArray[i, j]);
+                Console.Write(inputArray[i, j] + "\t");
                 Console.ResetColor();
-                Console.Write(" || ");
+                //Console.Write();
             }
-            else Console.Write(inputArray[i, j] + " || ");
+            else Console.Write(inputArray[i, j]  + "\t");
             j++;
         }
         Console.WriteLine();
