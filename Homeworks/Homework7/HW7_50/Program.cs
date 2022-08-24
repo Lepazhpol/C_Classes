@@ -117,7 +117,6 @@ void PrintColorArray(long[,] inputArray)
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(inputArray[i, j] + "\t");
                 Console.ResetColor();
-                //Console.Write();
             }
             else Console.Write(inputArray[i, j]  + "\t");
             j++;
