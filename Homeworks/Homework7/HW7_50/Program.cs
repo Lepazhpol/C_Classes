@@ -4,70 +4,29 @@
 
 Console.Clear();
 
-int[,] fibArray = FillingTwoDimArray(5, 10);
+Console.WriteLine("Зададим размер массива. Введите число строк: ");
+int countRow = int.Parse(Console.ReadLine() ?? "");
+Console.WriteLine("Введите число столбцов: ");
+int countCalumn = int.Parse(Console.ReadLine() ?? "");
+Console.WriteLine("Введите строку искомого элемента: ");
+int LookingForRow = int.Parse(Console.ReadLine() ?? "");
+Console.WriteLine("Введите столбец искомого элемента: ");
+int LookingForCalumn = int.Parse(Console.ReadLine() ?? "");
+
+
+long[,] fibArray = FillingTwoDimArray(countRow, countCalumn);
 PrintTwoDimArray(fibArray);
+Console.WriteLine();
+PrintResult(SearchNumber(fibArray));
 
 
-// Метод возвращает двумерный массив заполненный числами Фибоначчи
-int[,] FillingTwoDimArray(int countRow, int countColumn)
+// Метод возвращает двумерный массив заполненный числами Фибоначчи, укравшие 2 ночи моей жизни, 
+// из-за которых я забыл поставить задачу на обновление маршрутизации
+long[,] FillingTwoDimArray(int countRow, int countCalumn)
 {
-    int[,] outArray = new int[countRow, countColumn];
-    int y=countRow*countColumn;
-    int n = 0;
-    //outArray[0, 0] = 0;
-    //outArray[0, 1] = 1;
+    long[,] outArray = new long[countRow, countCalumn];
 
-        for (int i = 0; i < countRow; i++)
-        {
-            for (int j = 0; j < countColumn; j=j+(countColumn-1))
-            {
-                outArray[i, j] = Fibonacci((i+j+n));
-                
-            }
-        }
-    outArray[0, 0] = 0;
-    return outArray;
-}
-
-// Метод печатующий массив
-void PrintTwoDimArray(int[,] inputArray)
-{
-    int i = 0; int j = 0;
-    while (i < inputArray.GetLength(0))
-    {
-        j = 0;
-        while (j < inputArray.GetLength(1))
-        {
-            Console.Write(inputArray[i, j] + "       ");
-            j++;
-        }
-        Console.WriteLine();
-        i++;
-    }
-}
-
-int Fibonacci(int n)
-{
-    if (n < 3) return 1;
-    else return Fibonacci(n - 1) + Fibonacci(n - 2);
-}
-
-
-
-///////////////// чужой код!!!
-/* ====================================================================================
-Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и
-возвращает значение этого элемента или же указание, что такого элемента нет.
-* Заполнить числами Фиббоначи и выделить цветом найденную цифру
-====================================================================================== */
-
-// метод заполнения двумерного массива числами Фибоначи 
-// !!! не работает при количестве столбцов равному 1
-int[,] FillArrayBivariateFib(int countRow, int countCalumn)
-{
-    int[,] outArray = new int[countRow, countCalumn];
-
-    // заполняю первые 2 элемента
+    // первые 2 элемента
     for (int i = 0; i < 1; i++)
     {
         for (int j = 0; j < 2; j++)
@@ -77,7 +36,7 @@ int[,] FillArrayBivariateFib(int countRow, int countCalumn)
         }
     }
 
-    // заполняю первую  строку
+    // первая строка
     for (int i = 0; i < 1; i++)
     {
         for (int j = 2; j < countCalumn; j++)
@@ -86,7 +45,7 @@ int[,] FillArrayBivariateFib(int countRow, int countCalumn)
         }
     }
 
-    // заполняю остальной массив
+    // остальной массив
     for (int i = 1; i < countRow; i++)
     {
         int j = 0;
@@ -103,75 +62,68 @@ int[,] FillArrayBivariateFib(int countRow, int countCalumn)
     return outArray;
 }
 
-
-// метод печати двумерного массива 
-void PrintArrayBivariate(int[,] array)
+// Метод печатующий массив
+void PrintTwoDimArray(long[,] inputArray)
 {
-    // длина строки. Для строк указывается измерение - 0 
-    for (int i = 0; i < array.GetLength(0); i++)
+    int i = 0; int j = 0;
+    while (i < inputArray.GetLength(0))
     {
-        int j = 0;
-        // длина столбца. Для столбцов указывается измерение - 1
-        for (j = 0; j < array.GetLength(1); j++)
+        j = 0;
+        while (j < inputArray.GetLength(1))
         {
-            Console.Write(array[i, j] + "\t");
+            Console.Write(inputArray[i, j] + " || ");
+            j++;
         }
         Console.WriteLine();
+        i++;
     }
 }
 
-
-// Метод нахождения заданного числа в массиве и выдление его цветом
-void SerchElement(int[,] array, int serchNumber)
+//метод производящий поиск элемента по позиции
+bool SearchNumber (long[,] inputArray)
 {
-    bool proverca = false;
-    for (int i = 0; i < array.GetLength(0); i++)
+    bool result = false;
+    for (int i = 0; i < inputArray.GetLength(0); i++)
     {
-        int j = 0;
-        for (j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < inputArray.GetLength(1); j++)
         {
-            if (serchNumber == array[i, j])
+            if (i == (LookingForRow-1) && j == (LookingForCalumn-1))
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"Данное число находится на позиции [{i}, {j}]");
-                Console.WriteLine();
-                proverca = true;
-                Console.ResetColor();
-                for (int k = 0; k < array.GetLength(0); k++)
-                {
-                    int m = 0;
-                    for (m = 0; m < array.GetLength(1); m++)
-                    {
-                        if (serchNumber == array[k, m])
-                        {
-                            Console.ForegroundColor = ConsoleColor.Yellow;
-                            Console.Write(array[k, m] + "\t");
-                            Console.ResetColor();
-                        }
-                        else Console.Write(array[k, m] + "\t");
-                    }
-                    Console.WriteLine();
-                }
-                break;
+                 result = true;
             }
         }
     }
-    if (proverca == false)
+    return result;
+}
+
+//метод печатающий результат
+void PrintResult (bool result)
+{
+    if (result) PrintColorArray(fibArray);
+    else Console.WriteLine("Такого элемента в массиве нет");
+}
+
+//Метод, печатающий массив с выделенным элементом
+void PrintColorArray(long[,] inputArray)
+{
+    int i = 0; int j = 0;
+    while (i < inputArray.GetLength(0))
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Данного числа нет в массиве");
-        Console.ResetColor();
+        j = 0;
+        while (j < inputArray.GetLength(1))
+        {
+            if (i == (LookingForRow-1) && j == (LookingForCalumn-1))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(inputArray[i, j]);
+                Console.ResetColor();
+                Console.Write(" || ");
+            }
+            else Console.Write(inputArray[i, j] + " || ");
+            j++;
+        }
+        Console.WriteLine();
+        i++;
     }
 }
 
-
-
-int[,] arrayBivariate = FillArrayBivariateFib(4, 6);
-PrintArrayBivariate(arrayBivariate);
-Console.WriteLine();
-
-Console.Write("Введите число, которое хотите найти в массиве: ");
-int inputNumber = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine();
-SerchElement(arrayBivariate, inputNumber);
-Console.WriteLine();
